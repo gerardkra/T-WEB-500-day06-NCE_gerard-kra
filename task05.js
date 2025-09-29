@@ -1,26 +1,27 @@
-// We must "export" the function so the tester can use it
-export function range(start, end, step) {
-    // If step is not given, default = 1
+// Define the function in ES5 style
+function range(start, end, step) {
+    // Default step = 1 if not given
     if (step === undefined) {
         step = 1;
     }
 
-    // Create an empty array to store results
     var result = [];
 
-    // If step is positive → count upwards
+    // Step > 0 → count upwards
     if (step > 0) {
         for (var i = start; i <= end; i += step) {
-            result.push(i); // add i to the array
+            result.push(i);
         }
     }
-    // If step is negative → count downwards
+    // Step < 0 → count downwards
     else {
         for (var i = start; i >= end; i += step) {
-            result.push(i); // add i to the array
+            result.push(i);
         }
     }
 
-    // Return the filled array
     return result;
 }
+
+// ES5 style export
+module.exports = { range };
